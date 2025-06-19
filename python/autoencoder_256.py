@@ -17,49 +17,57 @@ class ImageAutoencoder(nn.Module):
         # Encoder: 64x64 -> latent_dim
         self.encoder = nn.Sequential(
             # First conv block: 64x64 -> 32x32
-            nn.Conv2d(1, 8, kernel_size=4, stride=2, padding=1),
+            nn.Conv2d(1,4, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
-            
+
             # Second conv block: 32x32 -> 16x16  
-            nn.Conv2d(8, 16, kernel_size=4, stride=2, padding=1),
+            nn.Conv2d(4, 8, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
             # Third conv block: 16x16 -> 8x8
-            nn.Conv2d(16, 32, kernel_size=4, stride=2, padding=1),
+            nn.Conv2d(8, 16, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
             # Fourth conv block: 8x8 -> 4x4
+            nn.Conv2d(16, 32, kernel_size=4, stride=2, padding=1),
+            nn.ReLU(),
+            
+            # Fifth conv block: 4x4 -> 2x2
             nn.Conv2d(32, 64, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
             # Flatten and compress to latent space
             nn.Flatten(),
-            nn.Linear(64 * 4 * 4, latent_dim)
+            nn.Linear(64 * 2 * 2, latent_dim)
         )
         
         # Decoder: latent_dim -> 64x64
         self.decoder = nn.Sequential(
             # Expand from latent space
-            nn.Linear(latent_dim, 64 * 4 * 4),
+            nn.Linear(latent_dim, 64 * 2 * 2),
             nn.ReLU(),
             
             # Reshape to feature maps
-            nn.Unflatten(1, (64, 4, 4)),
+            nn.Unflatten(1, (64, 2, 2)),
             
-            # First deconv: 4x4 -> 8x8
+            # First deconv: 2x2 -> 4x4
             nn.ConvTranspose2d(64, 32, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
-            # Second deconv: 8x8 -> 16x16
+            # Second deconv: 4x4 -> 8x8
             nn.ConvTranspose2d(32, 16, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
-            # Third deconv: 16x16 -> 32x32
+            # Third deconv: 8x8 -> 16x16
             nn.ConvTranspose2d(16, 8, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
-            # Final deconv: 32x32 -> 64x64
-            nn.ConvTranspose2d(8, 1, kernel_size=4, stride=2, padding=1),
+            # Fourth deconv: 16x16 -> 32x32
+            nn.ConvTranspose2d(8, 4, kernel_size=4, stride=2, padding=1),
+            nn.ReLU(),
+
+            # Fifth deconv: 32x32 -> 64x64
+            nn.ConvTranspose2d(4, 1, kernel_size=4, stride=2, padding=1),
             nn.Sigmoid()  # Output between 0 and 1
         )
     
@@ -68,7 +76,7 @@ class ImageAutoencoder(nn.Module):
         decoded = self.decoder(encoded)
         return encoded, decoded
 
-def create_sample_data(num_samples=100,c=0.3):
+def create_sample_data(num_samples=100):
     """
     Create sample 64x64 images for testing
     Replace this with your actual data loading function
@@ -80,6 +88,7 @@ def create_sample_data(num_samples=100,c=0.3):
         img = torch.empty((64, 64))
         
         # Generate random values for each pixel in image
+        c = 0.4
         phi = (np.pi / 4) * np.random.uniform(0,1)
         d = (2 * np.pi) * np.random.uniform()
         for u in range(img.shape[0]):  # rows
@@ -168,7 +177,7 @@ def main():
     print("Starting training...")
     
     # Training loop
-    num_epochs = 100
+    num_epochs = 500
     batch_size = 8
     
     train_losses = []
