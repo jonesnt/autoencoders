@@ -34,17 +34,17 @@ class ImageAutoencoder(nn.Module):
             
             # Flatten and compress to latent space
             nn.Flatten(),
-            nn.Linear(64 * 16 * 16, latent_dim)
+            nn.Linear(64 * 4 * 4, latent_dim)
         )
         
         # Decoder: latent_dim -> 64x64
         self.decoder = nn.Sequential(
             # Expand from latent space
-            nn.Linear(latent_dim, 64 * 16 * 16),
+            nn.Linear(latent_dim, 64 * 4 * 4),
             nn.ReLU(),
             
             # Reshape to feature maps
-            nn.Unflatten(1, (64, 16, 16)),
+            nn.Unflatten(1, (64, 4, 4)),
             
             # First deconv: 4x4 -> 8x8
             nn.ConvTranspose2d(64, 32, kernel_size=4, stride=2, padding=1),
