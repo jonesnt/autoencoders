@@ -88,7 +88,7 @@ def create_sample_data(num_samples=100):
         img = torch.empty((64, 64))
         
         # Generate random values for each pixel in image
-        c = 0.4
+        c = np.random.uniform(0.2,0.4)
         phi = (np.pi / 4) * np.random.uniform(0,1)
         d = (2 * np.pi) * np.random.uniform()
         for u in range(img.shape[0]):  # rows
