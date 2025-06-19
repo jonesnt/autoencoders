@@ -68,7 +68,7 @@ class ImageAutoencoder(nn.Module):
         decoded = self.decoder(encoded)
         return encoded, decoded
 
-def create_sample_data(num_samples=100,c=1):
+def create_sample_data(num_samples=100,c=0.3):
     """
     Create sample 64x64 images for testing
     Replace this with your actual data loading function
@@ -80,11 +80,27 @@ def create_sample_data(num_samples=100,c=1):
         img = torch.empty((64, 64))
         
         # Generate random values for each pixel in image
+        phi = (np.pi / 4) * np.random.uniform(0,1)
+        d = (2 * np.pi) * np.random.uniform()
         for u in range(img.shape[0]):  # rows
             for v in range(img.shape[1]):  # columns
-                phi = (np.pi / 4) * np.random.uniform(0,1)
-                d = (2 * np.pi) * np.random.rand()
-                img[u][v] = (np.sin(c * (u + v * np.tan(phi) * np.cos(phi) + d)) + 1) / 2
+                img[u][v] = (np.sin(c * ((u + v * np.tan(phi)) * np.cos(phi) + d)) + 1) / 2
+
+        # Randomize orientation
+        for j in range(num_samples):
+            variant = np.random.randint(0,4)
+            match variant:
+                case 1:  # Transpose
+                    img = torch.transpose(img,0,1)
+                    break
+                case 2:  # Invert on x axis
+                    np.fliplr(img)
+                    break
+                case 3:  # Invert on y axis
+                    np.flipud(img)
+                    break
+                case _:
+                    break
         
         data.append(img.unsqueeze(0))  # Add channel dimension
     
