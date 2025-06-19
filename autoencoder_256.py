@@ -131,8 +131,8 @@ def load_real_images(data_folder, num_samples=None):
         img = Image.open(img_path).convert('L')
         
         # Resize to 256x256 if needed
-        if img.size != (256, 256):
-            img = img.resize((256, 256), Image.Resampling.LANCZOS)
+        if img.size != (64, 64):
+            img = img.resize((64, 64), Image.Resampling.LANCZOS)
         
         # Convert to tensor and normalize to [0, 1]
         img_tensor = torch.tensor(np.array(img), dtype=torch.float32) / 255.0
@@ -233,12 +233,12 @@ def save_reconstructions(original, reconstructed):
     for i in range(len(original)):
         # Original image
         orig_img = original[i].squeeze().cpu().numpy()
-        orig_pil = Image.fromarray((orig_img * 255).astype(np.uint8), mode='L')
+        orig_pil = Image.fromarray((orig_img * 63).astype(np.uint8), mode='L')
         orig_pil.save(f'original_{i}.png')
         
         # Reconstructed image  
         recon_img = reconstructed[i].squeeze().cpu().numpy()
-        recon_pil = Image.fromarray((recon_img * 255).astype(np.uint8), mode='L')
+        recon_pil = Image.fromarray((recon_img * 63).astype(np.uint8), mode='L')
         recon_pil.save(f'reconstructed_{i}.png')
     
     print("Saved example images: original_*.png and reconstructed_*.png")
