@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 from PIL import Image
-import autoencoder_256 as ae
+import python.autoencoder_256 as ae
 
 def generate_images(num_images=5):
     images = ae.create_sample_data(num_images)
