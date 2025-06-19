@@ -68,7 +68,7 @@ class ImageAutoencoder(nn.Module):
         decoded = self.decoder(encoded)
         return encoded, decoded
 
-def create_sample_data(num_samples=100):
+def create_sample_data(num_samples=100,c=1):
     """
     Create sample 64x64 images for testing
     Replace this with your actual data loading function
@@ -76,18 +76,15 @@ def create_sample_data(num_samples=100):
     # Create random patterns similar to your microscopy data
     data = []
     for i in range(num_samples):
-        # Create base noise
-        img = torch.randn(64, 64) * 0.1 + 0.5
+        # Create empty 64x64 tensor
+        img = torch.empty((64, 64))
         
-        # Add some circular patterns (like particles)
-        for _ in range(20):
-            x, y = np.random.randint(20, 236, 2)
-            radius = np.random.randint(3, 8)
-            
-            # Create circular mask
-            Y, X = np.ogrid[:256, :256]
-            mask = (X - x)**2 + (Y - y)**2 <= radius**2
-            img[mask] = torch.rand(1) * 0.8 + 0.2
+        # Generate random values for each pixel in image
+        for u in range(img.shape[0]):  # rows
+            for v in range(img.shape[1]):  # columns
+                phi = (np.pi / 4) * np.random.uniform(0,1)
+                d = (2 * np.pi) * np.random.rand()
+                img[u][v] = (np.sin(c * (u + v * np.tan(phi) * np.cos(phi) + d)) + 1) / 2
         
         data.append(img.unsqueeze(0))  # Add channel dimension
     
