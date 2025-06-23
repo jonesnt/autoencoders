@@ -96,13 +96,6 @@ def create_sample_data(num_samples=100):
         elif variant == 3:  # Flip vertical
             img = torch.flipud(img)
         # variant == 0: no transformation
-
-        # Add Gaussian Noise (much smaller amount)
-        mean = 0.0  # Zero mean noise
-        std_dev = 0.02  # Very small noise level
-        gaussian_noise = torch.normal(mean, std_dev, img.shape)
-
-        img = img + gaussian_noise
         
         # Clamp values to [0, 1] range to prevent outliers
         img = torch.clamp(img, 0, 1)
