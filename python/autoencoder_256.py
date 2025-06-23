@@ -110,6 +110,13 @@ def create_sample_data(num_samples=100):
                     break
                 case _:
                     break
+
+        # Add Gaussian Noise
+        mean = 0.5
+        std_dev = 0.1
+        gaussian_noise = torch.normal(mean, std_dev, img.shape)
+
+        img = img + gaussian_noise
         
         data.append(img.unsqueeze(0))  # Add channel dimension
     
@@ -156,7 +163,7 @@ def main():
     print(f'Using device: {device}')
     
     # Create model
-    model = ImageAutoencoder(latent_dim=128).to(device)
+    model = ImageAutoencoder(latent_dim=4).to(device)
     criterion = nn.MSELoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     
@@ -177,7 +184,7 @@ def main():
     print("Starting training...")
     
     # Training loop
-    num_epochs = 500
+    num_epochs = 5000
     batch_size = 8
     
     train_losses = []
