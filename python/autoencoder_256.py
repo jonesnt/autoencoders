@@ -105,7 +105,7 @@ def create_sample_data(num_samples=100):
 
         # Add Gaussian Noise
         mean = 0.5
-        std_dev = 0.1
+        std_dev = 0.05
         gaussian_noise = torch.normal(mean, std_dev, img.shape)
 
         img = img + gaussian_noise
