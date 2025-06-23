@@ -31,7 +31,7 @@
 # #SBATCH --gres=gpu:a100:1     # For A100 specifically
 
 # Partition selection (optional - SLURM will choose if not specified)
-#SBATCH --partition=binev-H200
+#SBATCH --partition=gpu-H200
 
 # Output files with more descriptive names
 #SBATCH --output=logs/autoencoder_%j_%x.out
