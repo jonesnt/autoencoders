@@ -87,28 +87,25 @@ def create_sample_data(num_samples=100):
             for v in range(img.shape[1]):  # columns
                 img[u][v] = (np.sin(c * ((u + v * np.tan(phi)) * np.cos(phi) + d)) + 1) / 2
 
-        # Randomize orientation
-        for j in range(num_samples):
-            variant = np.random.randint(0,4)
-            match variant:
-                case 1:  # Transpose
-                    img = torch.transpose(img,0,1)
-                    break
-                case 2:  # Invert on x axis
-                    np.fliplr(img)
-                    break
-                case 3:  # Invert on y axis
-                    np.flipud(img)
-                    break
-                case _:
-                    break
+        # Randomize orientation (apply once per image)
+        variant = np.random.randint(0, 4)
+        if variant == 1:  # Transpose
+            img = torch.transpose(img, 0, 1)
+        elif variant == 2:  # Flip horizontal
+            img = torch.fliplr(img)
+        elif variant == 3:  # Flip vertical
+            img = torch.flipud(img)
+        # variant == 0: no transformation
 
-        # Add Gaussian Noise
-        mean = 0.5
-        std_dev = 0.05
+        # Add Gaussian Noise (much smaller amount)
+        mean = 0.0  # Zero mean noise
+        std_dev = 0.02  # Very small noise level
         gaussian_noise = torch.normal(mean, std_dev, img.shape)
 
         img = img + gaussian_noise
+        
+        # Clamp values to [0, 1] range to prevent outliers
+        img = torch.clamp(img, 0, 1)
         
         data.append(img.unsqueeze(0))  # Add channel dimension
     
@@ -209,6 +206,22 @@ def main():
         
         if epoch % 20 == 0:
             print(f'Epoch [{epoch}/{num_epochs}], Loss: {avg_loss:.6f}')
+            
+            # Monitor reconstruction quality every 100 epochs
+            if epoch % 100 == 0 and epoch > 0:
+                model.eval()
+                with torch.no_grad():
+                    sample_batch = train_data[:4]
+                    _, sample_decoded = model(sample_batch)
+                    sample_loss = criterion(sample_decoded, sample_batch)
+                    print(f'  Sample reconstruction loss: {sample_loss:.6f}')
+                    
+                    # Check if outputs are too close to zero
+                    mean_output = sample_decoded.mean().item()
+                    print(f'  Mean output value: {mean_output:.4f}')
+                    if mean_output < 0.01:
+                        print("  WARNING: Outputs very close to zero - model may be collapsing!")
+                model.train()
     
     print("Training completed!")
     
