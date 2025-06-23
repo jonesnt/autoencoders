@@ -16,25 +16,30 @@ class ImageAutoencoder(nn.Module):
         
         # Encoder: 64x64 -> latent_dim
         self.encoder = nn.Sequential(
-            # First conv block: 64x64 -> 32x32
-            nn.Conv2d(1,4, kernel_size=4, stride=2, padding=1),
+            # First conv block: 64x64 -> 32x32 -> 16x16 (with pooling)
+            nn.Conv2d(1, 4, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-
-            # Second conv block: 32x32 -> 16x16  
-            nn.Conv2d(4, 8, kernel_size=4, stride=2, padding=1),
-            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),  # 64x64 -> 32x32
             
-            # Third conv block: 16x16 -> 8x8
-            nn.Conv2d(8, 16, kernel_size=4, stride=2, padding=1),
+            # Second conv block: 32x32 -> 16x16 (with pooling)
+            nn.Conv2d(4, 8, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),  # 32x32 -> 16x16
             
-            # Fourth conv block: 8x8 -> 4x4
-            nn.Conv2d(16, 32, kernel_size=4, stride=2, padding=1),
+            # Third conv block: 16x16 -> 8x8 (with pooling)
+            nn.Conv2d(8, 16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),  # 16x16 -> 8x8
             
-            # Fifth conv block: 4x4 -> 2x2
-            nn.Conv2d(32, 64, kernel_size=4, stride=2, padding=1),
+            # Fourth conv block: 8x8 -> 4x4 (with pooling)
+            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),  # 8x8 -> 4x4
+            
+            # Fifth conv block: 4x4 -> 2x2 (with pooling)
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),  # 4x4 -> 2x2
             
             # Flatten and compress to latent space
             nn.Flatten(),
