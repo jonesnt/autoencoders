@@ -14,65 +14,56 @@ class ImageAutoencoder(nn.Module):
     def __init__(self, latent_dim=4):
         super(ImageAutoencoder, self).__init__()
         
-        # Encoder: 64x64 -> latent_dim
+        # Encoder: 64x64 -> latent_dim (4 layers)
         self.encoder = nn.Sequential(
-            # First conv block: 64x64 -> 32x32 -> 16x16 (with pooling)
-            nn.Conv2d(1, 4, kernel_size=3, stride=1, padding=1),
+            # First conv block: 64x64 -> 32x32 (with pooling)
+            nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 64x64 -> 32x32
             
             # Second conv block: 32x32 -> 16x16 (with pooling)
-            nn.Conv2d(4, 8, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 32x32 -> 16x16
             
             # Third conv block: 16x16 -> 8x8 (with pooling)
-            nn.Conv2d(8, 16, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 16x16 -> 8x8
             
             # Fourth conv block: 8x8 -> 4x4 (with pooling)
-            nn.Conv2d(16, 32, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 8x8 -> 4x4
             
-            # Fifth conv block: 4x4 -> 2x2 (with pooling)
-            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
-            nn.ReLU(),
-            nn.MaxPool2d(kernel_size=2, stride=2),  # 4x4 -> 2x2
-            
             # Flatten and compress to latent space
             nn.Flatten(),
-            nn.Linear(64 * 2 * 2, latent_dim)
+            nn.Linear(128 * 4 * 4, latent_dim)
         )
         
-        # Decoder: latent_dim -> 64x64
+        # Decoder: latent_dim -> 64x64 (4 layers)
         self.decoder = nn.Sequential(
             # Expand from latent space
-            nn.Linear(latent_dim, 64 * 2 * 2),
+            nn.Linear(latent_dim, 128 * 4 * 4),
             nn.ReLU(),
             
             # Reshape to feature maps
-            nn.Unflatten(1, (64, 2, 2)),
+            nn.Unflatten(1, (128, 4, 4)),
             
-            # First deconv: 2x2 -> 4x4
+            # First deconv: 4x4 -> 8x8
+            nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1),
+            nn.ReLU(),
+            
+            # Second deconv: 8x8 -> 16x16
             nn.ConvTranspose2d(64, 32, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
             
-            # Second deconv: 4x4 -> 8x8
+            # Third deconv: 16x16 -> 32x32
             nn.ConvTranspose2d(32, 16, kernel_size=4, stride=2, padding=1),
             nn.ReLU(),
-            
-            # Third deconv: 8x8 -> 16x16
-            nn.ConvTranspose2d(16, 8, kernel_size=4, stride=2, padding=1),
-            nn.ReLU(),
-            
-            # Fourth deconv: 16x16 -> 32x32
-            nn.ConvTranspose2d(8, 4, kernel_size=4, stride=2, padding=1),
-            nn.ReLU(),
 
-            # Fifth deconv: 32x32 -> 64x64
-            nn.ConvTranspose2d(4, 1, kernel_size=4, stride=2, padding=1),
+            # Fourth deconv: 32x32 -> 64x64
+            nn.ConvTranspose2d(16, 1, kernel_size=4, stride=2, padding=1),
             nn.Sigmoid()  # Output between 0 and 1
         )
     
