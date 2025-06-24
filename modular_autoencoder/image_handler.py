@@ -7,7 +7,7 @@ from image_generator import ImageGenerator
 from generator_enum import GENERATORS
 import random
 
-class Image_Handler:
+class ImageHandler:
     _instance = None
 
     def __new__(cls, *args, **kwargs):
