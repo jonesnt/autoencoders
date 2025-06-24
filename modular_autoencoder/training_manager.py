@@ -7,8 +7,8 @@ from PIL import Image
 import os
 import argparse
 
-from modular_autoencoder.autoencoder_enum import AUTOENCODERS
-from modular_autoencoder.image_handler import ImageHandler
+from autoencoder_enum import AUTOENCODERS
+from image_handler import ImageHandler
 
 def plot_training_loss(losses):
     """Plot and save training loss curve"""
@@ -61,8 +61,13 @@ def main(epochs, batch_size, learning_rate, model_name, num_images):
     print(f"Data shape: {data[0].shape}")
 
     # Split train/test
-    train_data = data[:np.floor(3/5 * num_images)]
-    test_data = data[np.floor(3/5 * num_images):]
+    split_idx = int(0.6 * num_images)
+    train_data = data[:split_idx]
+    test_data = data[split_idx:]
+
+    # Convert lists to torch tensors and move to device
+    train_data = torch.stack(train_data).to(device)
+    test_data = torch.stack(test_data).to(device)
 
     print("starting training...")
     

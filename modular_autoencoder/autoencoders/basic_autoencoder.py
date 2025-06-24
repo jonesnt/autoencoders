@@ -1,5 +1,5 @@
 from torch import nn
-from modular_autoencoder.autoencoder_base import AutoencoderBase
+from autoencoder_base import AutoencoderBase
 
 class ImageAutoencoder(AutoencoderBase, nn.Module):
     """
