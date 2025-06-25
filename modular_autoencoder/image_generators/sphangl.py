@@ -20,4 +20,4 @@ def sphangl():
         [s]
     ])
 
-    return a0ss
+    return a0
