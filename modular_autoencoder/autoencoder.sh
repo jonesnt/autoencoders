@@ -147,9 +147,6 @@ python training_manager.py \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
     --latent_dim $LATENT_DIM \
-    --data_dir $DATA_DIR \
-    --output_dir $OUTPUT_DIR \
-    --checkpoint_dir $CHECKPOINT_DIR \
     --job_id $SLURM_JOB_ID
 
 # Capture exit code
