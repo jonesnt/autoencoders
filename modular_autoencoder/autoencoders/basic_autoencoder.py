@@ -7,7 +7,7 @@ class ImageAutoencoder(AutoencoderBase, nn.Module):
     Compresses image to latent space and reconstructs it
     """
     def __init__(self, latent_dim=4):
-        super(ImageAutoencoder, self).__init__()
+        super(AutoencoderBase, self).__init__()
         
         # Encoder: 64x64 -> latent_dim
         self.encoder = nn.Sequential(
