@@ -147,7 +147,7 @@ python training_manager.py \
     --batch_size $BATCH_SIZE \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
-    --latent_dim $LATENT_DIM
+    --latent_dim $LATENT_DIM \
     --model_name $MODEL
 
 # Capture exit code
