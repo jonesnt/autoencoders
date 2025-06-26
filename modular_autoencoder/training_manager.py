@@ -37,7 +37,7 @@ def save_reconstructions(original, reconstructed):
 
     print("Saved example images: original_*.png and reconstructed_*.png")
 
-def main(epochs, batch_size, learning_rate, model_name, num_images):
+def main(epochs, batch_size, learning_rate, model_name, num_images, latent_dim):
     # Check GPU availability
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
@@ -45,7 +45,7 @@ def main(epochs, batch_size, learning_rate, model_name, num_images):
     # Model instantiation
     if model_name in AUTOENCODERS.__members__:
         model_class = AUTOENCODERS[model_name].value
-        model = model_class().to(device)
+        model = model_class(latent_dim).to(device)
     else:
         print(f"Model {model_name} not found in AUTOENCODERS enum.")
         return
@@ -153,6 +153,7 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=0.001, help='Learning rate for the optimizer')
     parser.add_argument('--model_name', type=str, default='BASIC', help='Name of model to use from enumeration')
     parser.add_argument('--num_images', type=int, default=100, help='Number of images to generate for training')
+    parser.add_argument('--latent_dim', type=int, default=16, help='Dimensionality of the latent space')
     args = parser.parse_args()
 
-    main(args.epochs, args.batch_size, args.learning_rate, args.model_name, args.num_images)
+    main(args.epochs, args.batch_size, args.learning_rate, args.model_name, args.num_images, args.latent_dim)

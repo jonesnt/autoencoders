@@ -26,10 +26,6 @@
 # Request 1 GPU (this is the key for ML jobs!)
 #SBATCH --gres=gpu:1
 
-# You can also specify GPU type if needed:
-# #SBATCH --gres=gpu:h200:1     # For H200 specifically
-# #SBATCH --gres=gpu:a100:1     # For A100 specifically
-
 # Partition selection (optional - SLURM will choose if not specified)
 #SBATCH --partition=binev-H200
 
@@ -43,10 +39,6 @@
 
 # Quality of Service (QoS) - controls priority
 # #SBATCH --qos=normal
-
-# Job arrays (uncomment to run multiple versions)
-# This would create jobs with SLURM_ARRAY_TASK_ID = 1,2,3,4,5
-# #SBATCH --array=1-5
 
 #########################################################################
 # ENVIRONMENT SETUP
@@ -112,19 +104,8 @@ echo "==========================================="
 # Set experiment parameters (makes it easy to modify)
 BATCH_SIZE=32
 LEARNING_RATE=0.001
-EPOCHS=500
-LATENT_DIM=128
-
-# If using job arrays, you could vary parameters:
-if [ ! -z "$SLURM_ARRAY_TASK_ID" ]; then
-    case $SLURM_ARRAY_TASK_ID in
-        1) LATENT_DIM=64 ;;
-        2) LATENT_DIM=128 ;;
-        3) LATENT_DIM=256 ;;
-        4) LEARNING_RATE=0.0001 ;;
-        5) LEARNING_RATE=0.01 ;;
-    esac
-fi
+EPOCHS=5000
+LATENT_DIM=16
 
 echo "EXPERIMENT PARAMETERS:"
 echo "Batch size: $BATCH_SIZE"
