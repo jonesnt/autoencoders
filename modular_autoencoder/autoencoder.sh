@@ -146,8 +146,7 @@ python training_manager.py \
     --batch_size $BATCH_SIZE \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
-    --latent_dim $LATENT_DIM \
-    --job_id $SLURM_JOB_ID
+    --latent_dim $LATENT_DIM
 
 # Capture exit code
 EXIT_CODE=$?
