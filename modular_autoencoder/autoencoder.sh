@@ -142,7 +142,7 @@ fi
 echo "Starting main computation..."
 
 # Run the Python script with parameters
-python autoencoder_256.py \
+python training_manager.py \
     --batch_size $BATCH_SIZE \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
