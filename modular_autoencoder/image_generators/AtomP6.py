@@ -3,11 +3,11 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from .AtomP1 import AtomP1
-from .DataSim import DataSim
-from .SetPoints import SetPoints
-from .sets import sets
-from .sphangl import sphangl
+from image_generators.AtomP1 import AtomP1
+from image_generators.DataSim import DataSim
+from image_generators.SetPoints import SetPoints
+from image_generators.sets import sets
+from image_generators.sphangl import sphangl
 
 def main():
     res = 256
