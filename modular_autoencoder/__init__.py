@@ -1,3 +1,0 @@
-"""
-Modular autoencoder package.
-"""
