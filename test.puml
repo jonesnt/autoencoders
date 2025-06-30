@@ -1,0 +1,48 @@
+@startuml
+' UML diagram for AutoencoderProject
+
+enum GENERATORS
+
+class ImageHandler {
+    - _instance: ImageHandler
+    + generate_training_data(num_images, width, height)
+}
+
+abstract class ImageGenerator {
+    + generate(width, height)
+}
+
+class SinusoidalImageGenerator {
+    + generate(width, height)
+}
+
+SinusoidalImageGenerator --|> ImageGenerator
+
+' Existing autoencoder enum and classes
+enum AUTOENCODERS
+
+class BasicAutoencoder
+AUTOENCODERS --|> BasicAutoencoder : includes
+TrainingManager ..> BasicAutoencoder : trains/uses
+model_eval_script ..> BasicAutoencoder : evaluates
+
+class TrainingManager {
+    + main(epochs, batch_size, learning_rate, model_name, num_images)
+    + plot_training_loss(losses)
+    + save_reconstructions(original, reconstructed)
+}
+
+class model_eval_script {
+    + load_model(model_path, model_name)
+    + evaluate_model(model, image)
+}
+
+' Relationships
+ImageHandler --> GENERATORS : uses
+ImageHandler --> ImageGenerator : uses
+TrainingManager ..> ImageHandler
+TrainingManager ..> AUTOENCODERS
+model_eval_script ..> AUTOENCODERS
+model_eval_script ..> SinusoidalImageGenerator
+
+@enduml

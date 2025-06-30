@@ -1,14 +1,18 @@
 # AtomP6
+import sys
+import os
+# Add the parent directory to the path so Python can find image_generator.py
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from image_generator import ImageGenerator
 import torch
 
 import numpy as np
 import matplotlib.pyplot as plt
-import AtomP1
-import DataSim
-import SetPoints
-import sets
-import sphangl
+from image_generators.AtomP1 import AtomP1
+from image_generators.DataSim import DataSim
+from image_generators.SetPoints import SetPoints
+from image_generators.sets import bb as sets  # Import bb function as sets
+from image_generators.sphangl import sphangl
 
 
 class AtomP6(ImageGenerator):
