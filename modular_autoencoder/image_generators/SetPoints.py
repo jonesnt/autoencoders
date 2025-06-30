@@ -18,7 +18,7 @@ def SetPoints(u1, v1, d1, sp, s, bb):
         if np.abs(ju1[l])<s and np.abs(jv1[l])<s:
             ku = ju1[l]+s
             kv = jv1[l]+s
-            if bb[ku, kv] > 0:
+            if bb[ku-1, kv-1] > 0:
                 u[m] = u1[l]
                 v[m] = v1[l]
                 d[m] = d1[l]
