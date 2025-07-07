@@ -85,9 +85,9 @@ def ortho(sig1=1, sig2=1, sig3=1, spread=1):
         'alpha': alpha,
         'beta': beta,
         'gamma': gamma,
-        'n1': n1,
-        'n2': n2,
-        'n3': n3
+        'n1': float(n1),
+        'n2': float(n2),
+        'n3': float(n3)
     }
 
     return image_dat
