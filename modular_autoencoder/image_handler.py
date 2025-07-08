@@ -3,7 +3,7 @@ This is a singleton handler class for images.
 It accepts instructions about the number of images to generate and their specifications.
 It returns a list of pseudorandom images for the purpose of model training.
 '''
-from image_generators import ImageGenerator
+from image_generators.image_generator import ImageGenerator
 from generator_enum import GENERATORS
 import random
 
