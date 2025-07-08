@@ -1,7 +1,7 @@
 from enum import Enum
-from image_generators.sinusoidal_image_generator import SinusoidalImageGenerator
-from image_generators.AtomP6 import AtomP6
+from image_generators.simple_generator import SimpleGenerator
+from image_generators.body_centered_generator import BodyCenteredGenerator
 
 class GENERATORS(Enum):
-   # SINUSOID = SinusoidalImageGenerator
-    ATOMP6 = AtomP6
+   SIMPLE = SimpleGenerator
+   BODY_CENTERED = BodyCenteredGenerator
