@@ -55,24 +55,23 @@ class SimpleGenerator(ImageGenerator):
         extraAtomY = 32
         # constant seems to be linear in atom size
         constant = 1/100
-        standDev = 50
+        standDev = 60
         atomWidthOld = np.log(np.exp(1/(2*standDev**2)/(1000*constant)))
         
-        atomWidth = 10
-        # for i in range(10,20):
-        #     for j in range(10,20):
-        #         image[i][j] = 100
+        # make even
+        atomWidth = 8
+        TempBrightness = 600
 
         # for pixelX in range(int(np.floor(2*atomWidth))):
         #     for pixelY in range(int(np.floor(2*atomWidth))):
         #         # if not outside of the frame
-        for pixelX in range(-5,5):
-            for pixelY in range(-5,5):        
-                if(extraAtomX - atomWidth >= 0 and extraAtomY - atomWidth >= 0):
+        for pixelX in range(int(-atomWidth/2),int(atomWidth/2)):
+            for pixelY in range(int(-atomWidth/2),int(atomWidth/2)):        
+                if(extraAtomX + pixelX >= 0 and extraAtomX + pixelX < 64 and extraAtomY + pixelY >= 0 and extraAtomY + pixelY < 64):
                     # Calculates Gaussian Blur of each atom
-                    f = lambda y, x: constant*np.exp((-(extraAtomX-x)**2 -(extraAtomX-y)**2)/(2*standDev**2))
-                    image[extraAtomX + pixelX][extraAtomY + pixelY] = 10000*(scipy.integrate.dblquad(f, pixelX, pixelX+1, pixelY, pixelY+1))[0]
-                    print(scipy.integrate.dblquad(f, pixelX, pixelX+1, pixelY, pixelY+1))
+                    f = lambda y, x: constant*np.exp((-(extraAtomX-x)**2 -(extraAtomY-y)**2)/(2*standDev**2))
+                    image[extraAtomX + pixelX + 4][extraAtomY +  pixelY + 4] = TempBrightness*(scipy.integrate.dblquad(f, pixelX, pixelX+1, pixelY, pixelY+1))[0]
+                    print(TempBrightness*scipy.integrate.dblquad(f, pixelX, pixelX+1, pixelY, pixelY+1)[0])
         
         print(atomWidthOld)
         return image
