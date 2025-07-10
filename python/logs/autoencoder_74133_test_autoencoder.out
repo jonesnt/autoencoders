@@ -1,0 +1,327 @@
+===========================================
+SLURM JOB INFORMATION
+===========================================
+Job ID: 74133
+Job Name: test_autoencoder
+Node: node039
+Task ID: 0
+CPUs per task: 8
+Memory: 32768 MB
+Working directory: /home/jonesnt/autoencoders/python
+Started at: Mon Jun 23 02:59:44 PM EDT 2025
+===========================================
+Loading modules...
+Activating Python environment...
+===========================================
+GPU INFORMATION
+===========================================
+Mon Jun 23 14:59:44 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                On  |   00000000:01:00.0 Off |                    0 |
+| N/A   29C    P0             68W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200 NVL                On  |   00000000:71:00.0 Off |                    0 |
+| N/A   29C    P0             69W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA Version: 
+Testing PyTorch GPU access...
+PyTorch version: 2.3.1+cu121
+CUDA available: True
+GPU count: 1
+Current device: 0
+===========================================
+EXPERIMENT PARAMETERS:
+Batch size: 32
+Learning rate: 0.001
+Epochs: 500
+Latent dimension: 128
+===========================================
+Data directory: /work/binev-lab/shared_data/microscopy_images
+Output directory: ./results/exp_20250623_145945_job74133
+Warning: Data directory /work/binev-lab/shared_data/microscopy_images not found. Using synthetic data.
+Starting main computation...
+Using device: cuda
+Creating sample data...
+Data shape: torch.Size([200, 1, 64, 64])
+Starting training...
+Epoch [0/5000], Loss: 0.224039
+Epoch [20/5000], Loss: 0.135235
+Epoch [40/5000], Loss: 0.135235
+Epoch [60/5000], Loss: 0.135235
+Epoch [80/5000], Loss: 0.135235
+Epoch [100/5000], Loss: 0.135235
+Epoch [120/5000], Loss: 0.135235
+Epoch [140/5000], Loss: 0.135235
+Epoch [160/5000], Loss: 0.135235
+Epoch [180/5000], Loss: 0.135235
+Epoch [200/5000], Loss: 0.135235
+Epoch [220/5000], Loss: 0.135235
+Epoch [240/5000], Loss: 0.135235
+Epoch [260/5000], Loss: 0.135235
+Epoch [280/5000], Loss: 0.135235
+Epoch [300/5000], Loss: 0.135235
+Epoch [320/5000], Loss: 0.135235
+Epoch [340/5000], Loss: 0.135235
+Epoch [360/5000], Loss: 0.135235
+Epoch [380/5000], Loss: 0.135235
+Epoch [400/5000], Loss: 0.135235
+Epoch [420/5000], Loss: 0.135235
+Epoch [440/5000], Loss: 0.135235
+Epoch [460/5000], Loss: 0.135235
+Epoch [480/5000], Loss: 0.135235
+Epoch [500/5000], Loss: 0.135235
+Epoch [520/5000], Loss: 0.135235
+Epoch [540/5000], Loss: 0.135235
+Epoch [560/5000], Loss: 0.135235
+Epoch [580/5000], Loss: 0.135235
+Epoch [600/5000], Loss: 0.135235
+Epoch [620/5000], Loss: 0.135235
+Epoch [640/5000], Loss: 0.135235
+Epoch [660/5000], Loss: 0.135235
+Epoch [680/5000], Loss: 0.135235
+Epoch [700/5000], Loss: 0.135235
+Epoch [720/5000], Loss: 0.135235
+Epoch [740/5000], Loss: 0.135235
+Epoch [760/5000], Loss: 0.135235
+Epoch [780/5000], Loss: 0.135235
+Epoch [800/5000], Loss: 0.135235
+Epoch [820/5000], Loss: 0.135235
+Epoch [840/5000], Loss: 0.135235
+Epoch [860/5000], Loss: 0.135235
+Epoch [880/5000], Loss: 0.135235
+Epoch [900/5000], Loss: 0.135235
+Epoch [920/5000], Loss: 0.135235
+Epoch [940/5000], Loss: 0.135235
+Epoch [960/5000], Loss: 0.135235
+Epoch [980/5000], Loss: 0.135235
+Epoch [1000/5000], Loss: 0.135235
+Epoch [1020/5000], Loss: 0.135235
+Epoch [1040/5000], Loss: 0.135235
+Epoch [1060/5000], Loss: 0.135235
+Epoch [1080/5000], Loss: 0.135235
+Epoch [1100/5000], Loss: 0.135235
+Epoch [1120/5000], Loss: 0.135235
+Epoch [1140/5000], Loss: 0.135235
+Epoch [1160/5000], Loss: 0.135235
+Epoch [1180/5000], Loss: 0.135235
+Epoch [1200/5000], Loss: 0.135235
+Epoch [1220/5000], Loss: 0.135235
+Epoch [1240/5000], Loss: 0.135235
+Epoch [1260/5000], Loss: 0.135235
+Epoch [1280/5000], Loss: 0.135235
+Epoch [1300/5000], Loss: 0.135235
+Epoch [1320/5000], Loss: 0.135235
+Epoch [1340/5000], Loss: 0.135235
+Epoch [1360/5000], Loss: 0.135235
+Epoch [1380/5000], Loss: 0.135235
+Epoch [1400/5000], Loss: 0.135235
+Epoch [1420/5000], Loss: 0.135235
+Epoch [1440/5000], Loss: 0.135235
+Epoch [1460/5000], Loss: 0.135235
+Epoch [1480/5000], Loss: 0.135235
+Epoch [1500/5000], Loss: 0.135235
+Epoch [1520/5000], Loss: 0.135235
+Epoch [1540/5000], Loss: 0.135235
+Epoch [1560/5000], Loss: 0.135235
+Epoch [1580/5000], Loss: 0.135235
+Epoch [1600/5000], Loss: 0.135235
+Epoch [1620/5000], Loss: 0.135235
+Epoch [1640/5000], Loss: 0.135235
+Epoch [1660/5000], Loss: 0.135235
+Epoch [1680/5000], Loss: 0.135235
+Epoch [1700/5000], Loss: 0.135235
+Epoch [1720/5000], Loss: 0.135235
+Epoch [1740/5000], Loss: 0.135235
+Epoch [1760/5000], Loss: 0.135235
+Epoch [1780/5000], Loss: 0.135235
+Epoch [1800/5000], Loss: 0.135235
+Epoch [1820/5000], Loss: 0.135235
+Epoch [1840/5000], Loss: 0.135235
+Epoch [1860/5000], Loss: 0.135235
+Epoch [1880/5000], Loss: 0.135235
+Epoch [1900/5000], Loss: 0.135235
+Epoch [1920/5000], Loss: 0.135235
+Epoch [1940/5000], Loss: 0.135235
+Epoch [1960/5000], Loss: 0.135235
+Epoch [1980/5000], Loss: 0.135235
+Epoch [2000/5000], Loss: 0.135235
+Epoch [2020/5000], Loss: 0.135235
+Epoch [2040/5000], Loss: 0.135235
+Epoch [2060/5000], Loss: 0.135235
+Epoch [2080/5000], Loss: 0.135235
+Epoch [2100/5000], Loss: 0.135235
+Epoch [2120/5000], Loss: 0.135235
+Epoch [2140/5000], Loss: 0.135235
+Epoch [2160/5000], Loss: 0.135235
+Epoch [2180/5000], Loss: 0.135235
+Epoch [2200/5000], Loss: 0.135235
+Epoch [2220/5000], Loss: 0.135235
+Epoch [2240/5000], Loss: 0.135235
+Epoch [2260/5000], Loss: 0.135235
+Epoch [2280/5000], Loss: 0.135235
+Epoch [2300/5000], Loss: 0.135235
+Epoch [2320/5000], Loss: 0.135235
+Epoch [2340/5000], Loss: 0.135235
+Epoch [2360/5000], Loss: 0.135235
+Epoch [2380/5000], Loss: 0.135235
+Epoch [2400/5000], Loss: 0.135235
+Epoch [2420/5000], Loss: 0.135235
+Epoch [2440/5000], Loss: 0.135235
+Epoch [2460/5000], Loss: 0.135235
+Epoch [2480/5000], Loss: 0.135235
+Epoch [2500/5000], Loss: 0.135235
+Epoch [2520/5000], Loss: 0.135235
+Epoch [2540/5000], Loss: 0.135235
+Epoch [2560/5000], Loss: 0.135235
+Epoch [2580/5000], Loss: 0.135235
+Epoch [2600/5000], Loss: 0.135235
+Epoch [2620/5000], Loss: 0.135235
+Epoch [2640/5000], Loss: 0.135235
+Epoch [2660/5000], Loss: 0.135235
+Epoch [2680/5000], Loss: 0.135235
+Epoch [2700/5000], Loss: 0.135235
+Epoch [2720/5000], Loss: 0.135235
+Epoch [2740/5000], Loss: 0.135235
+Epoch [2760/5000], Loss: 0.135235
+Epoch [2780/5000], Loss: 0.135235
+Epoch [2800/5000], Loss: 0.135235
+Epoch [2820/5000], Loss: 0.135235
+Epoch [2840/5000], Loss: 0.135235
+Epoch [2860/5000], Loss: 0.135235
+Epoch [2880/5000], Loss: 0.135235
+Epoch [2900/5000], Loss: 0.135235
+Epoch [2920/5000], Loss: 0.135235
+Epoch [2940/5000], Loss: 0.135235
+Epoch [2960/5000], Loss: 0.135235
+Epoch [2980/5000], Loss: 0.135235
+Epoch [3000/5000], Loss: 0.135235
+Epoch [3020/5000], Loss: 0.135235
+Epoch [3040/5000], Loss: 0.135235
+Epoch [3060/5000], Loss: 0.135235
+Epoch [3080/5000], Loss: 0.135235
+Epoch [3100/5000], Loss: 0.135235
+Epoch [3120/5000], Loss: 0.135235
+Epoch [3140/5000], Loss: 0.135235
+Epoch [3160/5000], Loss: 0.135235
+Epoch [3180/5000], Loss: 0.135235
+Epoch [3200/5000], Loss: 0.135235
+Epoch [3220/5000], Loss: 0.135235
+Epoch [3240/5000], Loss: 0.135235
+Epoch [3260/5000], Loss: 0.135235
+Epoch [3280/5000], Loss: 0.135235
+Epoch [3300/5000], Loss: 0.135235
+Epoch [3320/5000], Loss: 0.135235
+Epoch [3340/5000], Loss: 0.135235
+Epoch [3360/5000], Loss: 0.135235
+Epoch [3380/5000], Loss: 0.135235
+Epoch [3400/5000], Loss: 0.135235
+Epoch [3420/5000], Loss: 0.135235
+Epoch [3440/5000], Loss: 0.135235
+Epoch [3460/5000], Loss: 0.135235
+Epoch [3480/5000], Loss: 0.135235
+Epoch [3500/5000], Loss: 0.135235
+Epoch [3520/5000], Loss: 0.135235
+Epoch [3540/5000], Loss: 0.135235
+Epoch [3560/5000], Loss: 0.135235
+Epoch [3580/5000], Loss: 0.135235
+Epoch [3600/5000], Loss: 0.135235
+Epoch [3620/5000], Loss: 0.135235
+Epoch [3640/5000], Loss: 0.135235
+Epoch [3660/5000], Loss: 0.135235
+Epoch [3680/5000], Loss: 0.135235
+Epoch [3700/5000], Loss: 0.135235
+Epoch [3720/5000], Loss: 0.135235
+Epoch [3740/5000], Loss: 0.135235
+Epoch [3760/5000], Loss: 0.135235
+Epoch [3780/5000], Loss: 0.135235
+Epoch [3800/5000], Loss: 0.135235
+Epoch [3820/5000], Loss: 0.135235
+Epoch [3840/5000], Loss: 0.135235
+Epoch [3860/5000], Loss: 0.135235
+Epoch [3880/5000], Loss: 0.135235
+Epoch [3900/5000], Loss: 0.135235
+Epoch [3920/5000], Loss: 0.135235
+Epoch [3940/5000], Loss: 0.135235
+Epoch [3960/5000], Loss: 0.135235
+Epoch [3980/5000], Loss: 0.135235
+Epoch [4000/5000], Loss: 0.135235
+Epoch [4020/5000], Loss: 0.135235
+Epoch [4040/5000], Loss: 0.135235
+Epoch [4060/5000], Loss: 0.135235
+Epoch [4080/5000], Loss: 0.135235
+Epoch [4100/5000], Loss: 0.135235
+Epoch [4120/5000], Loss: 0.135235
+Epoch [4140/5000], Loss: 0.135235
+Epoch [4160/5000], Loss: 0.135235
+Epoch [4180/5000], Loss: 0.135235
+Epoch [4200/5000], Loss: 0.135235
+Epoch [4220/5000], Loss: 0.135235
+Epoch [4240/5000], Loss: 0.135235
+Epoch [4260/5000], Loss: 0.135235
+Epoch [4280/5000], Loss: 0.135235
+Epoch [4300/5000], Loss: 0.135235
+Epoch [4320/5000], Loss: 0.135235
+Epoch [4340/5000], Loss: 0.135235
+Epoch [4360/5000], Loss: 0.135235
+Epoch [4380/5000], Loss: 0.135235
+Epoch [4400/5000], Loss: 0.135235
+Epoch [4420/5000], Loss: 0.135235
+Epoch [4440/5000], Loss: 0.135235
+Epoch [4460/5000], Loss: 0.135235
+Epoch [4480/5000], Loss: 0.135235
+Epoch [4500/5000], Loss: 0.135235
+Epoch [4520/5000], Loss: 0.135235
+Epoch [4540/5000], Loss: 0.135235
+Epoch [4560/5000], Loss: 0.135235
+Epoch [4580/5000], Loss: 0.135235
+Epoch [4600/5000], Loss: 0.135235
+Epoch [4620/5000], Loss: 0.135235
+Epoch [4640/5000], Loss: 0.135235
+Epoch [4660/5000], Loss: 0.135235
+Epoch [4680/5000], Loss: 0.135235
+Epoch [4700/5000], Loss: 0.135235
+Epoch [4720/5000], Loss: 0.135235
+Epoch [4740/5000], Loss: 0.135235
+Epoch [4760/5000], Loss: 0.135235
+Epoch [4780/5000], Loss: 0.135235
+Epoch [4800/5000], Loss: 0.135235
+Epoch [4820/5000], Loss: 0.135235
+Epoch [4840/5000], Loss: 0.135235
+Epoch [4860/5000], Loss: 0.135235
+Epoch [4880/5000], Loss: 0.135235
+Epoch [4900/5000], Loss: 0.135235
+Epoch [4920/5000], Loss: 0.135235
+Epoch [4940/5000], Loss: 0.135235
+Epoch [4960/5000], Loss: 0.135235
+Epoch [4980/5000], Loss: 0.135235
+Training completed!
+Test Loss: 0.134695
+Model saved as 'autoencoder_256.pth'
+Saved example images: original_*.png and reconstructed_*.png
+Saved training loss plot as 'training_loss.png'
+Training completed successfully!
+Results copied to shared directory.
+===========================================
+JOB COMPLETION INFORMATION
+===========================================
+Job completed at: Mon Jun 23 03:01:36 PM EDT 2025
+Exit code: 0
+Output directory: ./results/exp_20250623_145945_job74133
+Job efficiency:
+===========================================

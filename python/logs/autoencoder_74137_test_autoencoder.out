@@ -1,0 +1,425 @@
+===========================================
+SLURM JOB INFORMATION
+===========================================
+Job ID: 74137
+Job Name: test_autoencoder
+Node: node039
+Task ID: 0
+CPUs per task: 8
+Memory: 32768 MB
+Working directory: /home/jonesnt/autoencoders/python
+Started at: Mon Jun 23 03:29:59 PM EDT 2025
+===========================================
+Loading modules...
+Activating Python environment...
+===========================================
+GPU INFORMATION
+===========================================
+Mon Jun 23 15:29:59 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                On  |   00000000:01:00.0 Off |                    0 |
+| N/A   29C    P0             68W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200 NVL                On  |   00000000:71:00.0 Off |                    0 |
+| N/A   29C    P0             70W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA Version: 
+Testing PyTorch GPU access...
+PyTorch version: 2.3.1+cu121
+CUDA available: True
+GPU count: 1
+Current device: 0
+===========================================
+EXPERIMENT PARAMETERS:
+Batch size: 32
+Learning rate: 0.001
+Epochs: 500
+Latent dimension: 128
+===========================================
+Data directory: /work/binev-lab/shared_data/microscopy_images
+Output directory: ./results/exp_20250623_153000_job74137
+Warning: Data directory /work/binev-lab/shared_data/microscopy_images not found. Using synthetic data.
+Starting main computation...
+Using device: cuda
+Creating sample data...
+Data shape: torch.Size([200, 1, 64, 64])
+Starting training...
+Epoch [0/5000], Loss: 0.126209
+Epoch [20/5000], Loss: 0.035087
+Epoch [40/5000], Loss: 0.006988
+Epoch [60/5000], Loss: 0.003748
+Epoch [80/5000], Loss: 0.003104
+Epoch [100/5000], Loss: 0.002440
+  Sample reconstruction loss: 0.001756
+  Mean output value: 0.4975
+Epoch [120/5000], Loss: 0.001835
+Epoch [140/5000], Loss: 0.002191
+Epoch [160/5000], Loss: 0.001430
+Epoch [180/5000], Loss: 0.002558
+Epoch [200/5000], Loss: 0.001101
+  Sample reconstruction loss: 0.001010
+  Mean output value: 0.5033
+Epoch [220/5000], Loss: 0.001297
+Epoch [240/5000], Loss: 0.000964
+Epoch [260/5000], Loss: 0.001539
+Epoch [280/5000], Loss: 0.000869
+Epoch [300/5000], Loss: 0.002361
+  Sample reconstruction loss: 0.002607
+  Mean output value: 0.5004
+Epoch [320/5000], Loss: 0.000793
+Epoch [340/5000], Loss: 0.000943
+Epoch [360/5000], Loss: 0.000867
+Epoch [380/5000], Loss: 0.001858
+Epoch [400/5000], Loss: 0.000627
+  Sample reconstruction loss: 0.000609
+  Mean output value: 0.5019
+Epoch [420/5000], Loss: 0.002618
+Epoch [440/5000], Loss: 0.000606
+Epoch [460/5000], Loss: 0.000818
+Epoch [480/5000], Loss: 0.000666
+Epoch [500/5000], Loss: 0.001217
+  Sample reconstruction loss: 0.001214
+  Mean output value: 0.5039
+Epoch [520/5000], Loss: 0.000696
+Epoch [540/5000], Loss: 0.001419
+Epoch [560/5000], Loss: 0.000536
+Epoch [580/5000], Loss: 0.000706
+Epoch [600/5000], Loss: 0.000588
+  Sample reconstruction loss: 0.000483
+  Mean output value: 0.5010
+Epoch [620/5000], Loss: 0.000903
+Epoch [640/5000], Loss: 0.000673
+Epoch [660/5000], Loss: 0.000474
+Epoch [680/5000], Loss: 0.001810
+Epoch [700/5000], Loss: 0.000448
+  Sample reconstruction loss: 0.000372
+  Mean output value: 0.4954
+Epoch [720/5000], Loss: 0.000696
+Epoch [740/5000], Loss: 0.000583
+Epoch [760/5000], Loss: 0.000434
+Epoch [780/5000], Loss: 0.000451
+Epoch [800/5000], Loss: 0.000494
+  Sample reconstruction loss: 0.000481
+  Mean output value: 0.5024
+Epoch [820/5000], Loss: 0.000422
+Epoch [840/5000], Loss: 0.000984
+Epoch [860/5000], Loss: 0.000408
+Epoch [880/5000], Loss: 0.000556
+Epoch [900/5000], Loss: 0.000510
+  Sample reconstruction loss: 0.000570
+  Mean output value: 0.5012
+Epoch [920/5000], Loss: 0.000398
+Epoch [940/5000], Loss: 0.000571
+Epoch [960/5000], Loss: 0.000396
+Epoch [980/5000], Loss: 0.000525
+Epoch [1000/5000], Loss: 0.000610
+  Sample reconstruction loss: 0.000505
+  Mean output value: 0.4983
+Epoch [1020/5000], Loss: 0.000660
+Epoch [1040/5000], Loss: 0.000419
+Epoch [1060/5000], Loss: 0.000463
+Epoch [1080/5000], Loss: 0.000490
+Epoch [1100/5000], Loss: 0.000384
+  Sample reconstruction loss: 0.000357
+  Mean output value: 0.4996
+Epoch [1120/5000], Loss: 0.000965
+Epoch [1140/5000], Loss: 0.000363
+Epoch [1160/5000], Loss: 0.000617
+Epoch [1180/5000], Loss: 0.000598
+Epoch [1200/5000], Loss: 0.000354
+  Sample reconstruction loss: 0.000396
+  Mean output value: 0.4979
+Epoch [1220/5000], Loss: 0.000522
+Epoch [1240/5000], Loss: 0.000357
+Epoch [1260/5000], Loss: 0.000317
+Epoch [1280/5000], Loss: 0.000393
+Epoch [1300/5000], Loss: 0.000325
+  Sample reconstruction loss: 0.000306
+  Mean output value: 0.4996
+Epoch [1320/5000], Loss: 0.000507
+Epoch [1340/5000], Loss: 0.000305
+Epoch [1360/5000], Loss: 0.000633
+Epoch [1380/5000], Loss: 0.000331
+Epoch [1400/5000], Loss: 0.000297
+  Sample reconstruction loss: 0.000292
+  Mean output value: 0.4972
+Epoch [1420/5000], Loss: 0.000821
+Epoch [1440/5000], Loss: 0.000411
+Epoch [1460/5000], Loss: 0.000399
+Epoch [1480/5000], Loss: 0.000403
+Epoch [1500/5000], Loss: 0.000379
+  Sample reconstruction loss: 0.000531
+  Mean output value: 0.4994
+Epoch [1520/5000], Loss: 0.000341
+Epoch [1540/5000], Loss: 0.000842
+Epoch [1560/5000], Loss: 0.000291
+Epoch [1580/5000], Loss: 0.000454
+Epoch [1600/5000], Loss: 0.000326
+  Sample reconstruction loss: 0.000323
+  Mean output value: 0.5012
+Epoch [1620/5000], Loss: 0.000265
+Epoch [1640/5000], Loss: 0.000453
+Epoch [1660/5000], Loss: 0.000276
+Epoch [1680/5000], Loss: 0.000416
+Epoch [1700/5000], Loss: 0.000348
+  Sample reconstruction loss: 0.000390
+  Mean output value: 0.5015
+Epoch [1720/5000], Loss: 0.000265
+Epoch [1740/5000], Loss: 0.000623
+Epoch [1760/5000], Loss: 0.000270
+Epoch [1780/5000], Loss: 0.000260
+Epoch [1800/5000], Loss: 0.000574
+  Sample reconstruction loss: 0.000526
+  Mean output value: 0.4988
+Epoch [1820/5000], Loss: 0.000297
+Epoch [1840/5000], Loss: 0.000648
+Epoch [1860/5000], Loss: 0.000327
+Epoch [1880/5000], Loss: 0.000501
+Epoch [1900/5000], Loss: 0.000320
+  Sample reconstruction loss: 0.000370
+  Mean output value: 0.4985
+Epoch [1920/5000], Loss: 0.000422
+Epoch [1940/5000], Loss: 0.000399
+Epoch [1960/5000], Loss: 0.000318
+Epoch [1980/5000], Loss: 0.000244
+Epoch [2000/5000], Loss: 0.000664
+  Sample reconstruction loss: 0.000787
+  Mean output value: 0.5007
+Epoch [2020/5000], Loss: 0.000346
+Epoch [2040/5000], Loss: 0.000265
+Epoch [2060/5000], Loss: 0.000287
+Epoch [2080/5000], Loss: 0.000259
+Epoch [2100/5000], Loss: 0.000263
+  Sample reconstruction loss: 0.000195
+  Mean output value: 0.5004
+Epoch [2120/5000], Loss: 0.000363
+Epoch [2140/5000], Loss: 0.000481
+Epoch [2160/5000], Loss: 0.000383
+Epoch [2180/5000], Loss: 0.000314
+Epoch [2200/5000], Loss: 0.000273
+  Sample reconstruction loss: 0.000239
+  Mean output value: 0.4960
+Epoch [2220/5000], Loss: 0.000520
+Epoch [2240/5000], Loss: 0.000236
+Epoch [2260/5000], Loss: 0.000418
+Epoch [2280/5000], Loss: 0.000224
+Epoch [2300/5000], Loss: 0.000246
+  Sample reconstruction loss: 0.000306
+  Mean output value: 0.4989
+Epoch [2320/5000], Loss: 0.000366
+Epoch [2340/5000], Loss: 0.000353
+Epoch [2360/5000], Loss: 0.000499
+Epoch [2380/5000], Loss: 0.000313
+Epoch [2400/5000], Loss: 0.000349
+  Sample reconstruction loss: 0.000335
+  Mean output value: 0.4954
+Epoch [2420/5000], Loss: 0.000257
+Epoch [2440/5000], Loss: 0.000551
+Epoch [2460/5000], Loss: 0.000226
+Epoch [2480/5000], Loss: 0.000307
+Epoch [2500/5000], Loss: 0.000232
+  Sample reconstruction loss: 0.000199
+  Mean output value: 0.5012
+Epoch [2520/5000], Loss: 0.000233
+Epoch [2540/5000], Loss: 0.000251
+Epoch [2560/5000], Loss: 0.000219
+Epoch [2580/5000], Loss: 0.000506
+Epoch [2600/5000], Loss: 0.000265
+  Sample reconstruction loss: 0.000255
+  Mean output value: 0.5005
+Epoch [2620/5000], Loss: 0.000204
+Epoch [2640/5000], Loss: 0.000470
+Epoch [2660/5000], Loss: 0.000205
+Epoch [2680/5000], Loss: 0.000207
+Epoch [2700/5000], Loss: 0.000233
+  Sample reconstruction loss: 0.000171
+  Mean output value: 0.4989
+Epoch [2720/5000], Loss: 0.000311
+Epoch [2740/5000], Loss: 0.000276
+Epoch [2760/5000], Loss: 0.000498
+Epoch [2780/5000], Loss: 0.000208
+Epoch [2800/5000], Loss: 0.000326
+  Sample reconstruction loss: 0.000405
+  Mean output value: 0.4983
+Epoch [2820/5000], Loss: 0.000206
+Epoch [2840/5000], Loss: 0.000198
+Epoch [2860/5000], Loss: 0.000504
+Epoch [2880/5000], Loss: 0.000220
+Epoch [2900/5000], Loss: 0.000244
+  Sample reconstruction loss: 0.000227
+  Mean output value: 0.4984
+Epoch [2920/5000], Loss: 0.000425
+Epoch [2940/5000], Loss: 0.000255
+Epoch [2960/5000], Loss: 0.000306
+Epoch [2980/5000], Loss: 0.000372
+Epoch [3000/5000], Loss: 0.000222
+  Sample reconstruction loss: 0.000177
+  Mean output value: 0.5001
+Epoch [3020/5000], Loss: 0.000460
+Epoch [3040/5000], Loss: 0.000224
+Epoch [3060/5000], Loss: 0.000351
+Epoch [3080/5000], Loss: 0.000229
+Epoch [3100/5000], Loss: 0.000187
+  Sample reconstruction loss: 0.000155
+  Mean output value: 0.5004
+Epoch [3120/5000], Loss: 0.000213
+Epoch [3140/5000], Loss: 0.000368
+Epoch [3160/5000], Loss: 0.000202
+Epoch [3180/5000], Loss: 0.000293
+Epoch [3200/5000], Loss: 0.000211
+  Sample reconstruction loss: 0.000165
+  Mean output value: 0.5038
+Epoch [3220/5000], Loss: 0.000678
+Epoch [3240/5000], Loss: 0.000197
+Epoch [3260/5000], Loss: 0.000237
+Epoch [3280/5000], Loss: 0.000308
+Epoch [3300/5000], Loss: 0.000183
+  Sample reconstruction loss: 0.000180
+  Mean output value: 0.5009
+Epoch [3320/5000], Loss: 0.000381
+Epoch [3340/5000], Loss: 0.000235
+Epoch [3360/5000], Loss: 0.000219
+Epoch [3380/5000], Loss: 0.000235
+Epoch [3400/5000], Loss: 0.000180
+  Sample reconstruction loss: 0.000179
+  Mean output value: 0.5000
+Epoch [3420/5000], Loss: 0.000942
+Epoch [3440/5000], Loss: 0.000182
+Epoch [3460/5000], Loss: 0.000196
+Epoch [3480/5000], Loss: 0.000261
+Epoch [3500/5000], Loss: 0.000209
+  Sample reconstruction loss: 0.000166
+  Mean output value: 0.4995
+Epoch [3520/5000], Loss: 0.000411
+Epoch [3540/5000], Loss: 0.000177
+Epoch [3560/5000], Loss: 0.000220
+Epoch [3580/5000], Loss: 0.000266
+Epoch [3600/5000], Loss: 0.000194
+  Sample reconstruction loss: 0.000252
+  Mean output value: 0.5005
+Epoch [3620/5000], Loss: 0.000292
+Epoch [3640/5000], Loss: 0.000300
+Epoch [3660/5000], Loss: 0.000173
+Epoch [3680/5000], Loss: 0.000232
+Epoch [3700/5000], Loss: 0.000295
+  Sample reconstruction loss: 0.000364
+  Mean output value: 0.4998
+Epoch [3720/5000], Loss: 0.000192
+Epoch [3740/5000], Loss: 0.000189
+Epoch [3760/5000], Loss: 0.000459
+Epoch [3780/5000], Loss: 0.000172
+Epoch [3800/5000], Loss: 0.000461
+  Sample reconstruction loss: 0.000425
+  Mean output value: 0.4970
+Epoch [3820/5000], Loss: 0.000194
+Epoch [3840/5000], Loss: 0.000183
+Epoch [3860/5000], Loss: 0.000210
+Epoch [3880/5000], Loss: 0.000173
+Epoch [3900/5000], Loss: 0.000239
+  Sample reconstruction loss: 0.000238
+  Mean output value: 0.4978
+Epoch [3920/5000], Loss: 0.000220
+Epoch [3940/5000], Loss: 0.000172
+Epoch [3960/5000], Loss: 0.000404
+Epoch [3980/5000], Loss: 0.000190
+Epoch [4000/5000], Loss: 0.000814
+  Sample reconstruction loss: 0.000604
+  Mean output value: 0.5085
+Epoch [4020/5000], Loss: 0.000169
+Epoch [4040/5000], Loss: 0.000169
+Epoch [4060/5000], Loss: 0.000465
+Epoch [4080/5000], Loss: 0.000227
+Epoch [4100/5000], Loss: 0.000231
+  Sample reconstruction loss: 0.000255
+  Mean output value: 0.4980
+Epoch [4120/5000], Loss: 0.000388
+Epoch [4140/5000], Loss: 0.000176
+Epoch [4160/5000], Loss: 0.000393
+Epoch [4180/5000], Loss: 0.000193
+Epoch [4200/5000], Loss: 0.000325
+  Sample reconstruction loss: 0.000285
+  Mean output value: 0.4988
+Epoch [4220/5000], Loss: 0.000282
+Epoch [4240/5000], Loss: 0.000181
+Epoch [4260/5000], Loss: 0.000524
+Epoch [4280/5000], Loss: 0.000192
+Epoch [4300/5000], Loss: 0.000378
+  Sample reconstruction loss: 0.000320
+  Mean output value: 0.5014
+Epoch [4320/5000], Loss: 0.000245
+Epoch [4340/5000], Loss: 0.000249
+Epoch [4360/5000], Loss: 0.000247
+Epoch [4380/5000], Loss: 0.000247
+Epoch [4400/5000], Loss: 0.000224
+  Sample reconstruction loss: 0.000201
+  Mean output value: 0.4969
+Epoch [4420/5000], Loss: 0.000657
+Epoch [4440/5000], Loss: 0.000161
+Epoch [4460/5000], Loss: 0.000163
+Epoch [4480/5000], Loss: 0.000389
+Epoch [4500/5000], Loss: 0.000200
+  Sample reconstruction loss: 0.000240
+  Mean output value: 0.5001
+Epoch [4520/5000], Loss: 0.000200
+Epoch [4540/5000], Loss: 0.000344
+Epoch [4560/5000], Loss: 0.000168
+Epoch [4580/5000], Loss: 0.000390
+Epoch [4600/5000], Loss: 0.000203
+  Sample reconstruction loss: 0.000221
+  Mean output value: 0.5006
+Epoch [4620/5000], Loss: 0.000248
+Epoch [4640/5000], Loss: 0.000183
+Epoch [4660/5000], Loss: 0.000665
+Epoch [4680/5000], Loss: 0.000174
+Epoch [4700/5000], Loss: 0.000184
+  Sample reconstruction loss: 0.000213
+  Mean output value: 0.4982
+Epoch [4720/5000], Loss: 0.001020
+Epoch [4740/5000], Loss: 0.000158
+Epoch [4760/5000], Loss: 0.000155
+Epoch [4780/5000], Loss: 0.000252
+Epoch [4800/5000], Loss: 0.000161
+  Sample reconstruction loss: 0.000124
+  Mean output value: 0.4988
+Epoch [4820/5000], Loss: 0.000630
+Epoch [4840/5000], Loss: 0.000168
+Epoch [4860/5000], Loss: 0.000162
+Epoch [4880/5000], Loss: 0.000379
+Epoch [4900/5000], Loss: 0.000163
+  Sample reconstruction loss: 0.000163
+  Mean output value: 0.5029
+Epoch [4920/5000], Loss: 0.000891
+Epoch [4940/5000], Loss: 0.000156
+Epoch [4960/5000], Loss: 0.000164
+Epoch [4980/5000], Loss: 0.000348
+Training completed!
+Test Loss: 0.021171
+Model saved as 'autoencoder_256.pth'
+Saved example images: original_*.png and reconstructed_*.png
+Saved training loss plot as 'training_loss.png'
+Training completed successfully!
+Results copied to shared directory.
+===========================================
+JOB COMPLETION INFORMATION
+===========================================
+Job completed at: Mon Jun 23 03:31:57 PM EDT 2025
+Exit code: 0
+Output directory: ./results/exp_20250623_153000_job74137
+Job efficiency:
+===========================================

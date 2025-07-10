@@ -1,0 +1,78 @@
+===========================================
+SLURM JOB INFORMATION
+===========================================
+Job ID: 74383
+Job Name: test_autoencoder
+Node: node039
+Task ID: 0
+CPUs per task: 8
+Memory: 32768 MB
+Working directory: /home/jonesnt/autoencoders/modular_autoencoder
+Started at: Tue Jun 24 03:35:58 PM EDT 2025
+===========================================
+Loading modules...
+Activating Python environment...
+===========================================
+GPU INFORMATION
+===========================================
+Tue Jun 24 15:35:58 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.124.06             Driver Version: 570.124.06     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                On  |   00000000:01:00.0 Off |                    0 |
+| N/A   29C    P0             68W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA H200 NVL                On  |   00000000:71:00.0 Off |                    0 |
+| N/A   29C    P0             69W /  600W |       1MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+CUDA Version: 
+Testing PyTorch GPU access...
+PyTorch version: 2.3.1+cu121
+CUDA available: True
+GPU count: 1
+Current device: 0
+===========================================
+EXPERIMENT PARAMETERS:
+Batch size: 32
+Learning rate: 0.001
+Epochs: 5000
+Latent dimension: 128
+===========================================
+Data directory: /work/binev-lab/shared_data/microscopy_images
+Output directory: ./results/exp_20250624_153559_job74383
+Warning: Data directory /work/binev-lab/shared_data/microscopy_images not found. Using synthetic data.
+Starting main computation...
+Using device: cuda
+Generating 50000 training images...
+Data shape: torch.Size([1, 64, 64])
+starting training...
+Epoch [0/10], Loss: 0.022092
+Training complete.
+Test Loss: 0.001493
+Model saved as 'autoencoder_out.pth'
+Saved example images: original_*.png and reconstructed_*.png
+Saved training loss plot as 'training_loss.png'
+Training failed with exit code: 127
+Saving debug information...
+===========================================
+JOB COMPLETION INFORMATION
+===========================================
+Job completed at: Tue Jun 24 03:50:00 PM EDT 2025
+Exit code: 127
+Output directory: ./results/exp_20250624_153559_job74383
+Job efficiency:
+===========================================

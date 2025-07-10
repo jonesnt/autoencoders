@@ -23,9 +23,18 @@ class StriationGenerator(ImageGenerator):
             for v in range(img.shape[1]):  # columns
                 img[u][v] = (np.sin(c * ((u + v * np.tan(phi)) * np.cos(phi) + d)) + 1) / 2
 
+        # Add Poisson noise
+        # A higher scaling factor means a higher signal-to-noise ratio (less noise).
+        poisson_scaling_factor = 25.0  # Adjust to control Poisson noise level
+        img_with_poisson_noise = torch.poisson(img * poisson_scaling_factor) / poisson_scaling_factor
+
         # Add Gaussian noise
-        noise = torch.randn_like(img) * 0.1
-        img = torch.clamp(img + noise, 0, 1)
+        gaussian_std_dev = 0.05  # Adjust to control Gaussian noise level
+        gaussian_noise = torch.randn_like(img) * gaussian_std_dev
+        noisy_img = img_with_poisson_noise + gaussian_noise
+        
+        # Clamp the final values to be within [0, 1]
+        img = torch.clamp(noisy_img, 0, 1)
 
         # Randomize orientation
         variant = np.random.randint(0,4)

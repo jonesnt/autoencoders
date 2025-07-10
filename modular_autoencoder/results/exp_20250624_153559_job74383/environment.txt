@@ -1,0 +1,200 @@
+SHELL=/bin/bash
+MODULES_SET_SHELL_STARTUP=0
+COLORTERM=truecolor
+SLURM_JOB_USER=jonesnt
+SLURM_TASKS_PER_NODE=1
+SLURM_JOB_UID=1074
+HISTCONTROL=ignoredups
+TERM_PROGRAM_VERSION=1.101.1
+SLURM_TASK_PID=1321720
+CONDA_EXE=/home/apps/anaconda/3.12/bin/conda
+_CE_M=
+SLURM_JOB_GPUS=0
+SLURM_LOCALID=0
+SLURM_SUBMIT_DIR=/home/jonesnt/autoencoders/modular_autoencoder
+HISTSIZE=1000
+HOSTNAME=node039
+SLURMD_NODENAME=node039
+SLURM_JOB_START_TIME=1750793758
+_LMFILES__modshare=/cm/shared/modulefiles/python3/anaconda/3.12:1:/cm/local/modulefiles/gcc/13.1.0:1:/cm/local/modulefiles/slurm/slurm/23.02.7:1:/cm/local/modulefiles/shared:1
+SLURM_NODE_ALIASES=(null)
+SLURM_CLUSTER_NAME=slurm
+LIBRARY_PATH_modshare=/cm/shared/apps/slurm/current/lib64:1:/cm/shared/apps/slurm/current/lib64/slurm:1
+SLURM_JOB_END_TIME=1750808158
+CPATH_modshare=/cm/shared/apps/slurm/current/include:1
+SLURM_CPUS_ON_NODE=8
+SLURM_JOB_CPUS_PER_NODE=8
+MANPATH_modshare=/usr/local/share/man:1:/cm/local/apps/environment-modules/4.5.3//share/man:1:/cm/local/apps/environment-modules/current/share/man:1:/usr/share/man:1:/cm/shared/apps/slurm/current/man:1
+SLURM_GPUS_ON_NODE=1
+PWD=/home/jonesnt/autoencoders/modular_autoencoder
+SLURM_GTIDS=0
+LOGNAME=jonesnt
+XDG_SESSION_TYPE=tty
+CONDA_PREFIX=/work/binev-lab/venvs/binev-env
+SLURM_JOB_PARTITION=binev-H200
+MODULESHOME=/usr/share/Modules
+MANPATH=/cm/shared/apps/slurm/current/man:/cm/local/apps/environment-modules/4.5.3//share/man:/usr/local/share/man:/usr/share/man:/cm/local/apps/environment-modules/current/share/man:/cm/local/apps/environment-modules/current/share/man:/cm/local/apps/environment-modules/current/share/man:/cm/local/apps/environment-modules/current/share/man
+SLURM_JOB_NUM_NODES=1
+VSCODE_GIT_ASKPASS_NODE=/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/node
+SLURM_JOBID=74383
+SLURM_JOB_QOS=normal
+MOTD_SHOWN=pam
+HOME=/home/jonesnt
+LANG=en_US.UTF-8
+LD_LIBRARY_PATH_modshare=/home/apps/anaconda/3.12/lib:1
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.m4a=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.oga=01;36:*.opus=01;36:*.spx=01;36:*.xspf=01;36:
+SLURM_PROCID=0
+SSL_CERT_DIR=/etc/pki/tls/certs
+SSH_ORIGINAL_COMMAND=sh
+CONDA_PROMPT_MODIFIER=(/work/binev-lab/venvs/binev-env) 
+TMPDIR=/tmp
+GIT_ASKPASS=/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/extensions/git/dist/askpass.sh
+SLURM_CPUS_PER_TASK=8
+SLURM_NTASKS=1
+SLURM_TOPOLOGY_ADDR=node039
+SSH_CONNECTION=10.36.92.159 65261 129.252.167.231 222
+PATH_modshare=/home/jonesnt/bin:1:/usr/bin:1:/home/apps/anaconda/3.12/bin:1:/usr/local/bin:1:/home/jonesnt/anaconda3/condabin:1:/cm/shared/apps/slurm/current/bin:1:/home/jonesnt/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:1:/cm/shared/apps/slurm/current/sbin:1:/usr/local/go/bin:1:/cm/local/apps/gcc/13.1.0/bin:1:/home/jonesnt/.local/bin:1:/sbin:1:/usr/sbin:1:/cm/local/apps/environment-modules/4.5.3/bin:1:/usr/local/sbin:1:/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/bin/remote-cli:1:/home/jonesnt/anaconda3/bin:1
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+SLURM_TOPOLOGY_ADDR_PATTERN=node
+CUDA_VISIBLE_DEVICES=0
+MODULEPATH_modshare=/etc/scl/modulefiles:1:/cm/local/modulefiles:1:/cm/shared/modulefiles:2
+XDG_SESSION_CLASS=user
+LOADEDMODULES_modshare=python3/anaconda/3.12:1:gcc/13.1.0:1:slurm/slurm/23.02.7:1:shared:1
+SLURM_MEM_PER_NODE=32768
+SLURM_WORKING_CLUSTER=slurm:theia-hn:6817:9984:109
+TERM=xterm-256color
+_CE_CONDA=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+USER=jonesnt
+LIBRARY_PATH=/cm/shared/apps/slurm/current/lib64/slurm:/cm/shared/apps/slurm/current/lib64
+SLURM_NODELIST=node039
+VSCODE_GIT_IPC_HANDLE=/run/user/1074/vscode-git-64312dda3f.sock
+ENVIRONMENT=BATCH
+CONDA_SHLVL=2
+LOADEDMODULES=gcc/13.1.0:shared:slurm/slurm/23.02.7:python3/anaconda/3.12
+SLURM_JOB_ACCOUNT=binev-lab
+SLURM_PRIO_PROCESS=0
+SLURM_NPROCS=1
+SHLVL=3
+SLURM_NNODES=1
+XDG_SESSION_ID=127327
+SLURM_SUBMIT_HOST=login001
+CONDA_PYTHON_EXE=/home/apps/anaconda/3.12/bin/python
+LD_LIBRARY_PATH=/home/apps/anaconda/3.12/lib
+XDG_RUNTIME_DIR=/run/user/1074
+SLURM_JOB_ID=74383
+SSL_CERT_FILE=/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem
+SLURM_NODEID=0
+S_COLORS=auto
+SSH_CLIENT=10.36.92.159 65261 222
+CONDA_DEFAULT_ENV=/work/binev-lab/venvs/binev-env
+CMD_WLM_CLUSTER_NAME=slurm
+ENABLE_LMOD=0
+which_declare=declare -f
+VSCODE_GIT_ASKPASS_MAIN=/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/extensions/git/dist/askpass-main.js
+SLURM_CONF=/cm/shared/apps/slurm/var/etc/slurm/slurm.conf
+BROWSER=/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/bin/helpers/browser.sh
+PATH=/home/apps/anaconda/3.12/bin:/work/binev-lab/venvs/binev-env/bin:/home/jonesnt/anaconda3/condabin:/home/jonesnt/.vscode-server/cli/servers/Stable-18e3a1ec544e6907be1e944a94c496e302073435/server/bin/remote-cli:/cm/shared/apps/slurm/current/sbin:/cm/shared/apps/slurm/current/bin:/cm/local/apps/gcc/13.1.0/bin:/home/jonesnt/.local/bin:/home/jonesnt/bin:/cm/local/apps/environment-modules/4.5.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/sbin:/cm/local/apps/environment-modules/4.5.3/bin:/usr/local/go/bin:/usr/local/go/bin:/usr/local/go/bin:/home/jonesnt/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/usr/local/go/bin
+SLURM_JOB_NAME=test_autoencoder
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/cm/local/modulefiles:/cm/shared/modulefiles
+_LMFILES_=/cm/local/modulefiles/gcc/13.1.0:/cm/local/modulefiles/shared:/cm/local/modulefiles/slurm/slurm/23.02.7:/cm/shared/modulefiles/python3/anaconda/3.12
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1074/bus
+MAIL=/var/spool/mail/jonesnt
+CONDA_PREFIX_1=/home/jonesnt/anaconda3
+SLURM_JOB_GID=1079
+CPATH=/cm/shared/apps/slurm/current/include
+OLDPWD=/home/jonesnt
+SLURM_JOB_NODELIST=node039
+MODULES_CMD=/cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl
+TERM_PROGRAM=vscode
+VSCODE_IPC_HOOK_CLI=/run/user/1074/vscode-ipc-3685ab18-6a43-4166-892a-0219650a6afd.sock
+BASH_FUNC_ml%%=() {  module ml "$@"
+}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;
+ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then
+ typeset swname='main';
+ if [ -e /cm/local/apps/environment-modules/4.5.3//libexec/modulecmd.tcl ]; then
+ typeset swfound=0;
+ unset MODULES_USE_COMPAT_VERSION;
+ fi;
+ else
+ typeset swname='compatibility';
+ if [ -e /cm/local/apps/environment-modules/4.5.3//libexec/modulecmd-compat ]; then
+ typeset swfound=0;
+ MODULES_USE_COMPAT_VERSION=1;
+ export MODULES_USE_COMPAT_VERSION;
+ fi;
+ fi;
+ if [ $swfound -eq 0 ]; then
+ echo "Switching to Modules $swname version";
+ source /cm/local/apps/environment-modules/4.5.3//init/bash;
+ else
+ echo "Cannot switch to Modules $swname version, command not found";
+ return 1;
+ fi
+}
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1
+}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then
+ eval "module $@";
+ else
+ /usr/bin/scl "$@";
+ fi
+}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;
+ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+ case "$-" in 
+ *v*x*)
+ set +vx;
+ _mlshdbg='vx'
+ ;;
+ *v*)
+ set +v;
+ _mlshdbg='v'
+ ;;
+ *x*)
+ set +x;
+ _mlshdbg='x'
+ ;;
+ *)
+ _mlshdbg=''
+ ;;
+ esac;
+ fi;
+ unset _mlre _mlIFS;
+ if [ -n "${IFS+x}" ]; then
+ _mlIFS=$IFS;
+ fi;
+ IFS=' ';
+ for _mlv in ${MODULES_RUN_QUARANTINE:-};
+ do
+ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+ fi;
+ _mlrv="MODULES_RUNENV_${_mlv}";
+ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+ fi;
+ done;
+ if [ -n "${_mlre:-}" ]; then
+ eval `eval ${_mlre} /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash '"$@"'`;
+ else
+ eval `/usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash "$@"`;
+ fi;
+ _mlstatus=$?;
+ if [ -n "${_mlIFS+x}" ]; then
+ IFS=$_mlIFS;
+ else
+ unset IFS;
+ fi;
+ unset _mlre _mlv _mlrv _mlIFS;
+ if [ -n "${_mlshdbg:-}" ]; then
+ set -$_mlshdbg;
+ fi;
+ unset _mlshdbg;
+ return $_mlstatus
+}
+_=/usr/bin/env
