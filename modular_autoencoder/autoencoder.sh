@@ -106,13 +106,15 @@ BATCH_SIZE=32
 LEARNING_RATE=0.001
 EPOCHS=5000
 LATENT_DIM=16
-MODEL='TEST'
+MODEL='BASIC'
+NUM_IMAGES=100000
 
 echo "EXPERIMENT PARAMETERS:"
 echo "Batch size: $BATCH_SIZE"
 echo "Learning rate: $LEARNING_RATE"
 echo "Epochs: $EPOCHS"
 echo "Latent dimension: $LATENT_DIM"
+echo "Number of images: $NUM_IMAGES"
 echo "==========================================="
 
 #########################################################################
@@ -147,8 +149,9 @@ python training_manager.py \
     --batch_size $BATCH_SIZE \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
-    --latent_dim $LATENT_DIM \
-    --model_name $MODEL
+    --latent_dim $LATENT_DIM
+    --model_name $MODEL \
+    --num_images $NUM_IMAGES
 
 # Capture exit code
 EXIT_CODE=$?
