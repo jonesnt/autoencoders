@@ -5,8 +5,11 @@ import scipy
 import matplotlib.pyplot as plt
 from PIL import Image
 
-from .image_generator import ImageGenerator
-from .ortho import ortho
+try:
+    from .image_generator import ImageGenerator
+except ImportError:
+    from image_generator import ImageGenerator
+
 
 class StriationGenerator(ImageGenerator):
     def generate(self, width=64, height=64):
@@ -19,6 +22,10 @@ class StriationGenerator(ImageGenerator):
         for u in range(img.shape[0]):  # rows
             for v in range(img.shape[1]):  # columns
                 img[u][v] = (np.sin(c * ((u + v * np.tan(phi)) * np.cos(phi) + d)) + 1) / 2
+
+        # Add Gaussian noise
+        noise = torch.randn_like(img) * 0.1
+        img = torch.clamp(img + noise, 0, 1)
 
         # Randomize orientation
         variant = np.random.randint(0,4)
