@@ -66,8 +66,8 @@ def main(epochs, batch_size, learning_rate, model_name, num_images, latent_dim):
     test_data = data[split_idx:]
 
     # Convert lists to torch tensors and move to device
-    train_data = torch.stack(train_data).to(device)
-    test_data = torch.stack(test_data).to(device)
+    train_data = torch.stack(train_data).unsqueeze(1).to(device)
+    test_data = torch.stack(test_data).unsqueeze(1).to(device)
 
     print("starting training...")
     
@@ -133,7 +133,7 @@ def main(epochs, batch_size, learning_rate, model_name, num_images, latent_dim):
         'optimizer_state_dict': optimizer.state_dict(),
         'final_loss': avg_loss,
         'train_losses': train_losses,
-        'latent_dim': 128,
+        'latent_dim': latent_dim,
     }, 'autoencoder_out.pth')
 
     print("Model saved as 'autoencoder_out.pth'")
