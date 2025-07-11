@@ -1,0 +1,2 @@
+/cm/local/apps/slurm/var/spool/job77812/slurm_script: line 89: nvcc: command not found
+slurmstepd: error: *** JOB 77812 ON node039 CANCELLED AT 2025-07-10T14:19:10 ***

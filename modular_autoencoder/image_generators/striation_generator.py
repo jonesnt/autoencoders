@@ -16,7 +16,7 @@ class StriationGenerator(ImageGenerator):
         img = torch.empty((width, height), dtype=torch.float32)
 
         # Generate random values for each pixel in image
-        c = np.random.uniform(0.2,0.4)
+        c = np.random.uniform(0.2,0.8)
         phi = (np.pi / 4) * np.random.uniform(0,1)
         d = (2 * np.pi) * np.random.uniform()
         for u in range(img.shape[0]):  # rows

@@ -107,7 +107,7 @@ LEARNING_RATE=0.001
 EPOCHS=5000
 LATENT_DIM=16
 MODEL='BASIC'
-NUM_IMAGES=25000
+NUM_IMAGES=100000
 
 echo "EXPERIMENT PARAMETERS:"
 echo "Batch size: $BATCH_SIZE"
@@ -149,7 +149,7 @@ python training_manager.py \
     --batch_size $BATCH_SIZE \
     --learning_rate $LEARNING_RATE \
     --epochs $EPOCHS \
-    --latent_dim $LATENT_DIM \
+    --latent_dim $LATENT_DIM
     --model_name $MODEL \
     --num_images $NUM_IMAGES
 
